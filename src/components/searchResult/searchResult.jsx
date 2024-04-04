@@ -1,4 +1,3 @@
-// SearchResult.js
 import React from 'react';
 import './searchResult.css'
 const SearchResult = ({ resultados }) => {
