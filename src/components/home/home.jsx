@@ -23,7 +23,7 @@ const Home = ({ resultados, fetchNextPage, fetchPrevPage, currentQuery }) => {
   };
 
   useEffect(() => {
-    setCurrentPage(1); // Restablecer la página actual cuando cambian los resultados
+    setCurrentPage(1);
   }, [resultados]);
 
   return (

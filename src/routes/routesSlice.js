@@ -1,4 +1,3 @@
-// routesSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 export const routesSlice = createSlice({

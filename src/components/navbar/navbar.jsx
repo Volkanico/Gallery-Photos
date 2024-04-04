@@ -1,4 +1,3 @@
-// Navbar.jsx
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import './navbar.css';
@@ -7,7 +6,7 @@ import { setRoute } from '../../routes/routesSlice';
 const Navbar = ({ value, onChange, onClick }) => {
   const dispatch = useDispatch();
   const handleCollectionClick = () => {
-    dispatch(setRoute('/coleccion')); // Despacha la acción para cambiar la ruta a /coleccion
+    dispatch(setRoute('/coleccion')); 
   };
 
   return (

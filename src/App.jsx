@@ -7,13 +7,13 @@ import Home from './components/home/home.jsx';
 function App() {
   const [valor, setValor] = useState('');
   const [resultados, setResultados] = useState([]);
-  const [currentQuery, setCurrentQuery] = useState(''); // Nuevo estado para la consulta actual
-  const [currentPage, setCurrentPage] = useState(1); // Estado para la página actual
+  const [currentQuery, setCurrentQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
   const dispatch = useDispatch();
   const photos = useSelector((state) => state.photos);
 
   const handleSearch = () => {
-    setCurrentQuery(valor); // Almacenar la consulta actual
+    setCurrentQuery(valor);
     dispatch(fetchPhotos(valor));
   };
 
@@ -57,9 +57,9 @@ function App() {
       
       <Home
         resultados={resultados}
-        fetchNextPage={handleNextPage} // Pasar la función de paginación siguiente como prop
-        fetchPrevPage={handlePrevPage} // Pasar la función de paginación anterior como prop
-        currentQuery={currentQuery} // Pasar la consulta actual como prop
+        fetchNextPage={handleNextPage}
+        fetchPrevPage={handlePrevPage}
+        currentQuery={currentQuery}
       />
     </div>
   );
