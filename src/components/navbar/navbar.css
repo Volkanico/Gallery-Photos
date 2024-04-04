@@ -1,0 +1,34 @@
+.search__box{
+    width:100%;
+    margin:auto;
+    padding:1.2rem;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+
+}
+.search__box .search__box--input {
+    width:20%;
+    padding:0.4rem;
+    outline:none
+}
+.search__box .search__box--btn {
+    width:10%;
+    padding:10px;
+    outline:none;
+    background-color: darkslateblue;
+    color:white;
+    border: 2px solid darkslateblue
+}
+.search__box .search__box--colection {
+    width:10%;
+    padding:10px;
+    outline:none;
+    background-color: green;
+    color:white;
+    border: 2px solid darkslateblue
+}
+
+.search__box__logo {
+    width:40%;
+}
