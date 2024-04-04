@@ -1,3 +1,31 @@
-
-
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+  }
+  
+  .pagination-button {
+    background-color: #ccc;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 0 10px; /* Ajusta el margen entre los botones según sea necesario */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pagination-button:hover {
+    background-color: #ddd;
+  }
+  
+  .pagination-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .pagination-page {
+    font-size: 16px;
+    padding-top:0.5rem
+  }
   

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchPhotos } from './actions/photosActions';
 import Navbar from './components/navbar/navbar.jsx';
 import Home from './components/home/home.jsx';
+import './App.css'
 
 function App() {
   const [valor, setValor] = useState('');
@@ -41,20 +42,19 @@ function App() {
 
   return (
     <div>
-      {currentQuery && (
-  <div className="pagination">
-    <button onClick={handlePrevPage} disabled={currentPage === 1}>Previous</button>
-    <span>Page {currentPage}</span>
-    <button onClick={handleNextPage}>Next</button>
-  </div>
-)}
-
       <Navbar
         value={valor}
         onChange={(e) => setValor(e.target.value)}
         onClick={handleSearch}
       />
-      
+      {currentQuery && (
+  <div className="pagination-container">
+    <button className="pagination-button" onClick={handlePrevPage} disabled={currentPage === 1}>Previous</button>
+    <span className="pagination-page">Page {currentPage}</span>
+    <button className="pagination-button" onClick={handleNextPage}>Next</button>
+  </div>
+)}
+
       <Home
         resultados={resultados}
         fetchNextPage={handleNextPage}

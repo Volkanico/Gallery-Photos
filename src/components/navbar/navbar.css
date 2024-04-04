@@ -14,21 +14,33 @@
 }
 .search__box .search__box--btn {
     width:10%;
-    padding:10px;
-    outline:none;
-    background-color: darkslateblue;
-    color:white;
-    border: 2px solid darkslateblue
+    background-color: #41dc56;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 .search__box .search__box--colection {
     width:10%;
-    padding:10px;
-    outline:none;
-    background-color: green;
-    color:white;
-    border: 2px solid darkslateblue
+    background-color: #d8f422;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .search__box__logo {
     width:40%;
 }
+
+  
+  .search__box .search__box--colection:hover,
+  .search__box .search__box--btn:hover{
+    background-color: #ffffff;
+  }
+  

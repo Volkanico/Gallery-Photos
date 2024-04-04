@@ -33,7 +33,7 @@ const Home = ({ resultados, fetchNextPage, fetchPrevPage, currentQuery }) => {
         {resultados.map((elemento, indice) => (
           <div key={indice} className='main__content-grid__image-container'>
             <img src={elemento.urls.regular} alt={elemento} />
-            <button onClick={() => openModal(elemento)}>Ver características</button>
+            <button className='attributes' onClick={() => openModal(elemento)}>Ver características</button>
             {modalOpen && selectedImage === elemento && (
               <div className='modal' onClick={handleModalClick}>
                 <div className='modal-content'>
