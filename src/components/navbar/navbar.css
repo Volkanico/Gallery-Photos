@@ -13,19 +13,18 @@
     outline:none
 }
 .search__box .search__box--btn {
-    width:10%;
     background-color: #41dc56;
-    color: #333;
-    padding: 10px 20px;
-    font-size: 16px;
-    
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
-.search__box .search__box--colection {
-    width:10%;
+.search__box .search__box--home {
+    background-color: #19a9f7;
+}
+.search__box .search__box--collection {
     background-color: #d8f422;
+}
+.search__box .search__box--collection,
+.search__box .search__box--home,
+.search__box .search__box--btn {
+    width:10%;
     color: #333;
     padding: 10px 20px;
     font-size: 16px;
@@ -38,9 +37,13 @@
     width:40%;
 }
 
-  
-  .search__box .search__box--colection:hover,
-  .search__box .search__box--btn:hover{
+.search__box .search__box--home:hover,
+.search__box .search__box--collection:hover,
+.search__box .search__box--btn:hover{
     background-color: #ffffff;
-  }
+}
   
+.logo{
+    width:2rem;
+    height:2rem;
+}

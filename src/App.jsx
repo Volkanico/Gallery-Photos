@@ -3,9 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchPhotos } from './actions/photosActions';
 import Navbar from './components/navbar/navbar.jsx';
 import Home from './components/home/home.jsx';
+import Collection from './components/collection/collection.jsx';
 import './App.css'
+import { Link, Route, Router, Routes } from 'react-router-dom';
 
 function App() {
+  
   const [valor, setValor] = useState('');
   const [resultados, setResultados] = useState([]);
   const [currentQuery, setCurrentQuery] = useState('');
@@ -41,12 +44,22 @@ function App() {
   };
 
   return (
+    
     <div>
+      
       <Navbar
         value={valor}
         onChange={(e) => setValor(e.target.value)}
         onClick={handleSearch}
       />
+      <Routes>
+        <Route path='/' element={<Home
+        resultados={resultados}
+        currentQuery={currentQuery}
+      />}/>
+        <Route path='/collection' element={<Collection/>}/>
+      </Routes>
+      
       {currentQuery && (
   <div className="pagination-container">
     <button className="pagination-button" onClick={handlePrevPage} disabled={currentPage === 1}>Previous</button>
@@ -55,12 +68,7 @@ function App() {
   </div>
 )}
 
-      <Home
-        resultados={resultados}
-        fetchNextPage={handleNextPage}
-        fetchPrevPage={handlePrevPage}
-        currentQuery={currentQuery}
-      />
+      
     </div>
   );
 }

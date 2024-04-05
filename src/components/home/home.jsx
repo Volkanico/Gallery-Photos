@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './home.css';
 
-const Home = ({ resultados, fetchNextPage, fetchPrevPage, currentQuery }) => {
+const Home = ({ resultados }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [favorites, setFavorites] = useState([]);
 
   const openModal = (image) => {
     setSelectedImage(image);
@@ -16,6 +16,11 @@ const Home = ({ resultados, fetchNextPage, fetchPrevPage, currentQuery }) => {
     setModalOpen(false);
   };
 
+  const handleAddToFavorites = (image) => {
+    setFavorites([...favorites, image]);
+    localStorage.setItem('favorites', JSON.stringify([...favorites, image]));
+  };
+
   const handleModalClick = (e) => {
     if (e.target.classList.contains('modal')) {
       closeModal();
@@ -23,17 +28,21 @@ const Home = ({ resultados, fetchNextPage, fetchPrevPage, currentQuery }) => {
   };
 
   useEffect(() => {
-    setCurrentPage(1);
-  }, [resultados]);
+    const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
+    if (storedFavorites) {
+      setFavorites(storedFavorites);
+    }
+  }, []);
 
   return (
     <div className='main__content'>
-      
+      <h1>HOME</h1>
       <div className='main__content-grid'>
         {resultados.map((elemento, indice) => (
           <div key={indice} className='main__content-grid__image-container'>
             <img src={elemento.urls.regular} alt={elemento} />
             <button className='attributes' onClick={() => openModal(elemento)}>Ver características</button>
+            <button className='favorites' onClick={() => handleAddToFavorites(elemento)}>Añadir a favoritos</button>
             {modalOpen && selectedImage === elemento && (
               <div className='modal' onClick={handleModalClick}>
                 <div className='modal-content'>
@@ -50,7 +59,6 @@ const Home = ({ resultados, fetchNextPage, fetchPrevPage, currentQuery }) => {
           </div>
         ))}
       </div>
-      
     </div>
   );
 };

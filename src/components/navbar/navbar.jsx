@@ -1,18 +1,16 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import logo from '../../assets/lary-avatar.svg'
 import './navbar.css';
-import { setRoute } from '../../routes/routesSlice';
-
+import { Link } from "react-router-dom";
 const Navbar = ({ value, onChange, onClick }) => {
-  const dispatch = useDispatch();
-  const handleCollectionClick = () => {
-    dispatch(setRoute('/coleccion')); 
-  };
+  
+ 
 
   return (
     <div className='search__box'>
       <div className='search__box__logo'>
-        <img className='search__box__logo__img' src="" alt="logo" />
+      <img src={logo} alt="logo" className='logo'/>
+
       </div>
       
       <input
@@ -24,9 +22,13 @@ const Navbar = ({ value, onChange, onClick }) => {
       <button className='search__box--btn' onClick={onClick}>
         Buscar
       </button>
-      <button className='search__box--colection' onClick={handleCollectionClick}>
+      <Link to="/" className='search__box--home'>
+        Inicio
+      </Link>
+      <Link to="/collection" className='search__box--collection'>
         Colección
-      </button>
+      </Link>
+      
     </div>
   );
 };
